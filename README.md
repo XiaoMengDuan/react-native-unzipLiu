@@ -31,9 +31,9 @@ const targetPath = `${DocumentDirectoryPath}/myFile.txt`;
 
 unzip(sourcePath, targetPath)
 .then((path) => {
-  console.log(`unzip completed at ${path}`)
+  console.log(`unzip completed at ${path}`);
 })
 .catch((error) => {
-  console.log(error)
-})
+  console.log(error);
+});
 ```
