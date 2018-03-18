@@ -1,0 +1,24 @@
+{
+  "name": "react-native-unzipliu",
+  "version": "1.0.0",
+  "description": "Unzip for React Native App",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/XiaoMengDuan/react-native-unzipLiu.git"
+  },
+  "keywords": [
+    "react-native",
+    "ios",
+    "unzip"
+  ],
+  "author": "XiaoMeng",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/XiaoMengDuan/react-native-unzipLiu/issues"
+  },
+  "homepage": "https://github.com/XiaoMengDuan/react-native-unzipLiu#readme"
+}
