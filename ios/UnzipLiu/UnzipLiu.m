@@ -7,6 +7,8 @@
 //
 
 #import "UnzipLiu.h"
+#import "ZipArchive.h"
+#import "SSZipArchive+ZipFolders.h"
 #import "EMASIDataDecompressor.h"
 
 #if __has_include(<React/RCTEventDispatcher.h>)
@@ -22,7 +24,7 @@
 
 RCT_EXPORT_MODULE();
 
-RCT_EXPORT_METHOD(unzip:(NSString *)zipFilePath
+RCT_EXPORT_METHOD(unGzip:(NSString *)zipFilePath
                   destinationFilePath:(NSString *)destinationFilePath
                   resolver:(RCTPromiseResolveBlock)resolve
                   rejecter:(RCTPromiseRejectBlock)reject) {
@@ -33,8 +35,39 @@ RCT_EXPORT_METHOD(unzip:(NSString *)zipFilePath
     if (success) {
         resolve(destinationFilePath);
     } else {
-        reject(@"unzip_error", @"unable to unzip", error);
+        reject(@"-1", @"unable to unzip", error);
     }
 }
+
+RCT_EXPORT_METHOD(unZipFile:(NSString *)zipFilePath
+                  destinationFilePath:(NSString *)destinationFilePath
+                  resolver:(RCTPromiseResolveBlock)resolve
+                  rejecter:(RCTPromiseRejectBlock)reject) {
+    
+    BOOL success = [SSZipArchive unzipFileAtPath:zipFilePath toDestination:destinationFilePath];
+    
+    if (success) {
+        resolve(destinationFilePath);
+    } else {
+        reject(@"-2", @"Unable zip file", nil);
+    }
+}
+
+RCT_EXPORT_METHOD(zipFiles:(NSArray<NSString *> *)srcFilePaths
+                  destFilePath:(NSString *)destFilePath
+                  resolver:(RCTPromiseResolveBlock)resolve
+                  rejecter:(RCTPromiseRejectBlock)reject) {
+    
+    BOOL success = [SSZipArchive createZipFileAtPath:destFilePath withFoldersAtPaths:srcFilePaths];
+    
+    if (success) {
+        resolve(@"1");
+    }
+    else {
+        reject(@"-3", @"unable to compress", nil);
+    }
+}
+
+
 
 @end

@@ -12,6 +12,7 @@ import java.util.zip.GZIPInputStream;
 
 public class UnzipLiu extends ReactContextBaseJavaModule {
 
+
     public UnzipLiu(ReactApplicationContext reactContext) {
         super(reactContext);
     }
@@ -21,8 +22,55 @@ public class UnzipLiu extends ReactContextBaseJavaModule {
         return "UnzipLiu";
     }
 
+    /**
+     * 压缩文件
+     */
     @ReactMethod
-    public void unzip(final String srcFilePath, final String destFilePath, final Promise promise) {
+    public void zipFiles(final String[] srcFilePaths, final String destFilePath, final Promise promise) {
+
+        new Thread(new Runnable() {
+            @Override
+            public void run() {
+
+                boolean isSuccess = ZipHelper.zipFiles(srcFilePaths, destFilePath);
+
+                if (isSuccess) {
+                    promise.resolve(destFilePath);
+                } else {
+                    promise.reject("-3", "Couldn't open file " + srcFilePaths + ". ");
+                }
+
+            }
+        }).start();
+
+    }
+
+
+    /**
+     * 解压文件
+     */
+    @ReactMethod
+    public void unZipFile(final String srcFilePath, final String destFilePath, final Promise promise) {
+
+        new Thread(new Runnable() {
+            @Override
+            public void run() {
+
+                boolean isSuccess = ZipHelper.unZipFile(srcFilePath, destFilePath);
+
+                if (isSuccess) {
+                    promise.resolve(destFilePath);
+                } else {
+                    promise.reject("-2", "Couldn't open file " + srcFilePath + ". ");
+                }
+
+            }
+        }).start();
+    }
+
+
+    @ReactMethod
+    public void unGzip(final String srcFilePath, final String destFilePath, final Promise promise) {
         new Thread(new Runnable() {
             @Override
             public void run() {
@@ -64,7 +112,7 @@ public class UnzipLiu extends ReactContextBaseJavaModule {
                 } catch (Exception e) {
                     e.printStackTrace();
 
-                    promise.reject(null, "Couldn't open file " + srcFilePath + ". ");
+                    promise.reject("-1", "Couldn't open file " + srcFilePath + ". ");
 
                 }
 

@@ -2,6 +2,14 @@ import React, { NativeModules } from 'react-native';
 
 const UnzipLiu = NativeModules.UnzipLiu;
 
-export const unzip = (source, target) => {
-  return UnzipLiu.unzip(source, target);
+export const unGzip = (source, target) => {
+  return UnzipLiu.unGzip(source, target);
+};
+
+export const unZipFile = (srcFilePath, destFilePath) => {
+  return UnzipLiu.unZipFile(srcFilePath, destFilePath);
+}
+
+export const zipFiles = (srcFilePaths, destFilePath) => {
+  return UnzipLiu.zipFiles(srcFilePaths, destFilePath);
 }
