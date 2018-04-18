@@ -4,6 +4,8 @@ Unzip for React Native App
 
 This is for GZip file
 
+Version 1.0.3 Add Zip and Unzip function
+
 ## Installation
 
 ```bash
@@ -16,12 +18,12 @@ react-native link react-native-unzipliu
 import it into your code
 
 ```js
-import { unzip } from 'react-native-unzipliu';
+import { unGzip } from 'react-native-unzipliu';
 ```
 
 ## API
 
-**unzip(source: string, target: string): Promise**
+**unGzip(source: string, target: string): Promise**
 
 > unzip from source file to target file
 
@@ -31,7 +33,7 @@ Example
 const sourcePath = `${DocumentDirectoryPath}/myFile.zip`;
 const targetPath = `${DocumentDirectoryPath}/myFile.txt`;
 
-unzip(sourcePath, targetPath)
+unGzip(sourcePath, targetPath)
 .then((path) => {
   console.log(`unzip completed at ${path}`);
 })
