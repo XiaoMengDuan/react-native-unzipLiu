@@ -1,6 +1,6 @@
 {
   "name": "react-native-unzipliu",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "Unzip for React Native App",
   "main": "index.js",
   "scripts": {

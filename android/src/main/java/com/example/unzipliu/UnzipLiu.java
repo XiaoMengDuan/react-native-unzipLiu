@@ -35,7 +35,7 @@ public class UnzipLiu extends ReactContextBaseJavaModule {
                 boolean isSuccess = ZipHelper.zipFiles(srcFilePaths, destFilePath);
 
                 if (isSuccess) {
-                    promise.resolve(destFilePath);
+                    promise.resolve(1);
                 } else {
                     promise.reject("-3", "Couldn't open file " + srcFilePaths + ". ");
                 }
@@ -59,7 +59,7 @@ public class UnzipLiu extends ReactContextBaseJavaModule {
                 boolean isSuccess = ZipHelper.unZipFile(srcFilePath, destFilePath);
 
                 if (isSuccess) {
-                    promise.resolve(destFilePath);
+                    promise.resolve(1);
                 } else {
                     promise.reject("-2", "Couldn't open file " + srcFilePath + ". ");
                 }
@@ -107,7 +107,7 @@ public class UnzipLiu extends ReactContextBaseJavaModule {
                     gzipIS.close();
                     fIS.close();
 
-                    promise.resolve(destFilePath);
+                    promise.resolve(1);
 
                 } catch (Exception e) {
                     e.printStackTrace();
