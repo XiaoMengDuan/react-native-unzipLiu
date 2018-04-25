@@ -4,10 +4,13 @@ import com.facebook.react.bridge.Promise;
 import com.facebook.react.bridge.ReactApplicationContext;
 import com.facebook.react.bridge.ReactContextBaseJavaModule;
 import com.facebook.react.bridge.ReactMethod;
+import com.facebook.react.bridge.ReadableArray;
 
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.zip.GZIPInputStream;
 
 public class UnzipLiu extends ReactContextBaseJavaModule {
@@ -26,13 +29,16 @@ public class UnzipLiu extends ReactContextBaseJavaModule {
      * 压缩文件
      */
     @ReactMethod
-    public void zipFiles(final String[] srcFilePaths, final String destFilePath, final Promise promise) {
+    public void zipFiles(final ReadableArray srcFilePaths, final String destFilePath, final Promise promise) {
 
         new Thread(new Runnable() {
             @Override
             public void run() {
 
-                boolean isSuccess = ZipHelper.zipFiles(srcFilePaths, destFilePath);
+                ArrayList<Object> srcFilePathList = srcFilePaths.toArrayList();
+
+
+                boolean isSuccess = ZipHelper.zipFiles(srcFilePathList, destFilePath);
 
                 if (isSuccess) {
                     promise.resolve(1);

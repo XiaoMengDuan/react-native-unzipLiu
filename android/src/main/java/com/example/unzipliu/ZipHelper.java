@@ -9,6 +9,8 @@ import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.zip.ZipEntry;
 import java.util.zip.ZipInputStream;
 import java.util.zip.ZipOutputStream;
@@ -21,7 +23,7 @@ public class ZipHelper {
     /**
      * 压缩文件
      */
-    public static boolean zipFiles(String[] srcFilePaths, String destFilePath) {
+    public static boolean zipFiles(ArrayList<Object> srcFilePaths, String destFilePath) {
 
 
         boolean result = false;
@@ -45,8 +47,11 @@ public class ZipHelper {
 
             zos = new ZipOutputStream(new BufferedOutputStream(new FileOutputStream(destFile)));
 
-            for (String srcFilePath : srcFilePaths) {
-                File srcFile = new File(srcFilePath);
+            for (Object srcFilePath : srcFilePaths) {
+
+                String srcFilePathStr = srcFilePath.toString();
+
+                File srcFile = new File(srcFilePathStr);
 
                 if (srcFile == null || !srcFile.exists()) {
                     continue;
