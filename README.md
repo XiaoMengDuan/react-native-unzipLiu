@@ -4,6 +4,8 @@ Unzip for React Native App
 
 This is for GZip file
 
+Version 1.0.6 Add dismiss keyboard function
+
 Version 1.0.3 Add Zip and Unzip function
 
 ## Installation
