@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		AA17A8CD20AAD01500F0BED6 /* EMKeyboard.m in Sources */ = {isa = PBXBuildFile; fileRef = AA17A8CC20AAD01500F0BED6 /* EMKeyboard.m */; };
 		AA48BB99205E18D800B8599D /* UnzipLiu.m in Sources */ = {isa = PBXBuildFile; fileRef = AA48BB98205E18D800B8599D /* UnzipLiu.m */; };
 		AA48BB9A205E18D800B8599D /* UnzipLiu.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = AA48BB97205E18D800B8599D /* UnzipLiu.h */; };
 		AA6414E82085D4A400F27858 /* crypt.c in Sources */ = {isa = PBXBuildFile; fileRef = AA6414C22085D4A400F27858 /* crypt.c */; };
@@ -45,8 +44,6 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		AA17A8CB20AAD01500F0BED6 /* EMKeyboard.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EMKeyboard.h; sourceTree = "<group>"; };
-		AA17A8CC20AAD01500F0BED6 /* EMKeyboard.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EMKeyboard.m; sourceTree = "<group>"; };
 		AA48BB94205E18D800B8599D /* libUnzipLiu.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libUnzipLiu.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		AA48BB97205E18D800B8599D /* UnzipLiu.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UnzipLiu.h; sourceTree = "<group>"; };
 		AA48BB98205E18D800B8599D /* UnzipLiu.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UnzipLiu.m; sourceTree = "<group>"; };
@@ -135,8 +132,6 @@
 				AA48BB98205E18D800B8599D /* UnzipLiu.m */,
 				AA64152E2086E28900F27858 /* SSZipArchive+ZipFolders.h */,
 				AA64152F2086E28900F27858 /* SSZipArchive+ZipFolders.m */,
-				AA17A8CB20AAD01500F0BED6 /* EMKeyboard.h */,
-				AA17A8CC20AAD01500F0BED6 /* EMKeyboard.m */,
 			);
 			path = UnzipLiu;
 			sourceTree = "<group>";
@@ -252,7 +247,6 @@
 				AA6414F52085D4A400F27858 /* prng.c in Sources */,
 				AA6414F82085D4A400F27858 /* SSZipArchive.m in Sources */,
 				AA6414FB2085D79700F27858 /* EMASIDataDecompressor.m in Sources */,
-				AA17A8CD20AAD01500F0BED6 /* EMKeyboard.m in Sources */,
 				AA6414F42085D4A400F27858 /* aes_ni.c in Sources */,
 				AA6414F32085D4A400F27858 /* sha1.c in Sources */,
 				AA6414F22085D4A400F27858 /* fileenc.c in Sources */,

@@ -8,6 +8,8 @@ Version 1.0.6 Add dismiss keyboard function
 
 Version 1.0.3 Add Zip and Unzip function
 
+Version 1.0.7 remove keyboard in Version 1.0.6
+
 ## Installation
 
 ```bash

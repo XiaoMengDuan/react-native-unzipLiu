@@ -1,6 +1,6 @@
 {
   "name": "react-native-unzipliu",
-  "version": "1.0.6",
+  "version": "1.0.7",
   "description": "Unzip for React Native App",
   "main": "index.js",
   "scripts": {
@@ -12,9 +12,8 @@
   },
   "keywords": [
     "react-native",
-    "zip",
-    "unzip",
-    "keyboard"
+    "ios",
+    "unzip"
   ],
   "author": "XiaoMeng",
   "license": "MIT",
