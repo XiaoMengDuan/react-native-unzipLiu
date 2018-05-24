@@ -1,9 +1,5 @@
 package com.example.unzipliu;
 
-import android.content.Context;
-import android.view.View;
-import android.view.inputmethod.InputMethodManager;
-
 import com.facebook.react.bridge.Promise;
 import com.facebook.react.bridge.ReactApplicationContext;
 import com.facebook.react.bridge.ReactContextBaseJavaModule;
@@ -130,15 +126,4 @@ public class UnzipLiu extends ReactContextBaseJavaModule {
         }).start();
     }
 
-    @ReactMethod
-    public void dismissKeyboardWithResolver(final Promise promise) {
-        View view = getCurrentActivity().getWindow().peekDecorView();
-        if (view != null) {
-            InputMethodManager inputMethodManager = (InputMethodManager) getCurrentActivity().getSystemService(Context.INPUT_METHOD_SERVICE);
-            inputMethodManager.hideSoftInputFromWindow(view.getWindowToken(), 0);
-            promise.resolve(1);
-        }else{
-            promise.resolve(-1);
-        }
-    }
 }

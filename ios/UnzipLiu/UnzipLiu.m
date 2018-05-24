@@ -18,8 +18,6 @@
 #import "RCTEventDispatcher.h"
 #endif
 
-#import "EMKeyboard.h"
-
 @implementation UnzipLiu
 
 @synthesize bridge = _bridge;
@@ -68,14 +66,6 @@ RCT_EXPORT_METHOD(zipFiles:(NSArray<NSString *> *)srcFilePaths
     else {
         reject(@"-3", @"unable to compress", nil);
     }
-}
-
-RCT_EXPORT_METHOD(dismissKeyboardWithResolver:(RCTPromiseResolveBlock)resolve
-                  rejecter:(RCTPromiseRejectBlock)reject) {
-    
-    [EMKeyboard dismissKeyboard];
-    
-    resolve(@"1");
 }
 
 

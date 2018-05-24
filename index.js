@@ -13,7 +13,3 @@ export const unZipFile = (srcFilePath, destFilePath) => {
 export const zipFiles = (srcFilePaths, destFilePath) => {
   return UnzipLiu.zipFiles(srcFilePaths, destFilePath);
 }
-
-export const dismissKeyboard = () => {
-  return UnzipLiu.dismissKeyboardWithResolver();
-}
